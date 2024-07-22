@@ -51,8 +51,8 @@ func DefaultBucketer(val float64, bs []Bucket) int {
 		if b.Min > v {
 			return 1
 		}
-
-		panic(fmt.Sprintf("something bad happened: (val: %f, bs: %v)", val, bs))
+		// fallthrough will panic since this is never supposed to happen
+		panic(fmt.Sprintf("unexpected value fallthrough: (val: %f, bs: %v)", val, bs))
 	})
 	if !found {
 		return -1
