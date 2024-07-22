@@ -24,6 +24,7 @@ func TestHistogramFixedBins(t *testing.T) {
 		0.8,
 		0.9,
 		1.0,
+		12, // outside the range, should be ignored
 	}
 	bs, err := BSArbitrarySpan(0, 1, 10)(data)
 	is.NoErr(err)
